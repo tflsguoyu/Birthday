@@ -15,6 +15,14 @@
     <meta property="og:url" content="https://tflsguoyu.github.io/Birthday/" />
     <meta property="og:image" content="https://tflsguoyu.github.io/Birthday/og.png?v=__BUILD_VERSION__" />
     <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("sw.js?v=__BUILD_VERSION__", {
+            updateViaCache: "none",
+          });
+        });
+      }
+
       fetch(`version.json?check=${Date.now()}`, { cache: "no-store" })
         .then((response) => response.json())
         .then(({ version }) => {
