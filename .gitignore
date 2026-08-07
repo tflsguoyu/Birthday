@@ -1,0 +1,7 @@
+# This repository publishes only the finished static invitation.
+*
+!.gitignore
+!.github/
+!.github/**
+!site/
+!site/**

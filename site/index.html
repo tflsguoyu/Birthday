@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fffaf1" />
+    <title>Augie’s Third Birthday</title>
+    <meta name="description" content="Join us for Augie’s third birthday at The Little Gym on Sunday, August 30." />
+    <meta property="og:title" content="Augie’s Third Birthday" />
+    <meta property="og:description" content="Sunday, August 30 · 4:30–6:00 PM · The Little Gym" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="og.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="invitation" aria-labelledby="party-title">
+        <div class="paper-noise" aria-hidden="true"></div>
+        <div class="letter letter-a" aria-hidden="true">a</div>
+        <div class="letter letter-u" aria-hidden="true">u</div>
+        <div class="letter letter-g" aria-hidden="true">g</div>
+        <div class="letter letter-i" aria-hidden="true">i</div>
+        <div class="letter letter-e" aria-hidden="true">e</div>
+
+        <header class="hero-copy">
+          <p class="eyebrow">Jump, giggle &amp; celebrate</p>
+          <h1 id="party-title">Augie’s <span>third</span> birthday!</h1>
+          <p class="intro">Come tumble with us for a very happy afternoon.</p>
+        </header>
+
+        <div class="party-details">
+          <div class="date-block">
+            <span class="month">August</span>
+            <span class="day">30</span>
+            <span class="year">Sunday · 2026</span>
+          </div>
+          <div class="detail-copy">
+            <p class="time">4:30–6:00 PM</p>
+            <h2>The Little Gym</h2>
+            <p>572 Allen Rd, Unit A1-2<br />Basking Ridge, NJ 07920</p>
+            <a class="directions" href="https://www.google.com/maps/search/?api=1&amp;query=572+Allen+Rd+Unit+A1-2+Basking+Ridge+NJ+07920" target="_blank" rel="noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <button class="rsvp-button" id="open-rsvp" type="button">RSVP <span aria-hidden="true">→</span></button>
+        <p class="footer-note">Socks on, smiles ready!</p>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="rsvp-title">
+        <button class="close-button" id="close-rsvp" type="button" aria-label="Close RSVP form">×</button>
+        <form id="rsvp-form">
+          <div id="form-state">
+            <p class="eyebrow">Count us in</p>
+            <h2 id="rsvp-title">RSVP for Augie’s party</h2>
+            <label class="name-field">
+              <span>Your name</span>
+              <input id="guest-name" name="Name" required maxlength="80" autocomplete="name" placeholder="First and last name" />
+            </label>
+            <div class="counts">
+              <div class="count-field">
+                <span>Adults</span>
+                <div class="stepper" aria-label="Adults">
+                  <button type="button" data-counter="adults" data-change="-1" aria-label="Remove one adult">−</button>
+                  <output id="adults-output">1</output>
+                  <button type="button" data-counter="adults" data-change="1" aria-label="Add one adult">+</button>
+                </div>
+                <input type="hidden" id="adults" name="Adults" value="1" />
+              </div>
+              <div class="count-field">
+                <span>Children</span>
+                <div class="stepper" aria-label="Children">
+                  <button type="button" data-counter="children" data-change="-1" aria-label="Remove one child">−</button>
+                  <output id="children-output">1</output>
+                  <button type="button" data-counter="children" data-change="1" aria-label="Add one child">+</button>
+                </div>
+                <input type="hidden" id="children" name="Children" value="1" />
+              </div>
+            </div>
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="honey" aria-hidden="true" />
+            <input type="hidden" name="_subject" value="New RSVP for Augie’s birthday" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <p class="form-error" id="form-error" role="alert"></p>
+            <button class="submit-button" id="submit-rsvp" type="submit">Send RSVP</button>
+            <p class="privacy-note">Your response is emailed only to Augie’s family.</p>
+          </div>
+          <div class="success-state" id="success-state" hidden>
+            <div class="success-mark" aria-hidden="true">✓</div>
+            <p class="eyebrow">You’re on the list</p>
+            <h2>We can’t wait to celebrate!</h2>
+            <p id="confirmation-copy"></p>
+            <button class="submit-button" id="done-rsvp" type="button">Done</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
