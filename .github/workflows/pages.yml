@@ -25,10 +25,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
+      - name: Prepare versioned site
+        run: |
+          mkdir deploy
+          cp -R site/. deploy/
+          find deploy -type f \( -name '*.html' -o -name '*.json' \) -exec sed -i "s/__BUILD_VERSION__/${GITHUB_SHA}/g" {} +
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: deploy
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

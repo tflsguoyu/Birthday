@@ -4,23 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fffaf1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Augie’s 3rd Birthday</title>
     <meta name="description" content="Join us for Augie’s 3rd birthday at The Little Gym on Sunday, August 30." />
     <meta property="og:title" content="Augie’s 3rd Birthday" />
     <meta property="og:description" content="Sunday, August 30 · 4:30–6:00 PM · The Little Gym" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tflsguoyu.github.io/Birthday/" />
-    <meta property="og:image" content="https://tflsguoyu.github.io/Birthday/og.png" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <meta property="og:image" content="https://tflsguoyu.github.io/Birthday/og.png?v=__BUILD_VERSION__" />
+    <script>
+      fetch(`version.json?check=${Date.now()}`, { cache: "no-store" })
+        .then((response) => response.json())
+        .then(({ version }) => {
+          const url = new URL(window.location.href);
+          if (version && url.searchParams.get("v") !== version) {
+            url.searchParams.set("v", version);
+            window.location.replace(url);
+          }
+        })
+        .catch(() => {});
+    </script>
+    <link rel="stylesheet" href="styles.css?v=__BUILD_VERSION__" />
+    <script src="script.js?v=__BUILD_VERSION__" defer></script>
   </head>
   <body>
     <main>
       <section class="invitation" aria-labelledby="party-title">
         <div class="paper-noise" aria-hidden="true"></div>
-        <div class="flight-path flight-path-one" aria-hidden="true"><img src="cartoon-plane.png" alt="" /></div>
-        <div class="flight-path flight-path-two" aria-hidden="true"><img src="cartoon-plane.png" alt="" /></div>
-        <div class="flight-path flight-path-three" aria-hidden="true"><img src="cartoon-plane.png" alt="" /></div>
+        <div class="flight-path flight-path-one" aria-hidden="true"><img src="cartoon-plane.png?v=__BUILD_VERSION__" alt="" /></div>
+        <div class="flight-path flight-path-two" aria-hidden="true"><img src="cartoon-plane.png?v=__BUILD_VERSION__" alt="" /></div>
+        <div class="flight-path flight-path-three" aria-hidden="true"><img src="cartoon-plane.png?v=__BUILD_VERSION__" alt="" /></div>
         <div class="background-name" aria-hidden="true">
           <span>a</span><span>u</span><span>g</span><span>i</span><span>e</span>
         </div>
