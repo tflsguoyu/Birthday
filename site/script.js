@@ -3,6 +3,7 @@ const endpoint = `https://formsubmit.co/ajax/${recipient}`;
 
 const backdrop = document.querySelector("#modal-backdrop");
 const openButton = document.querySelector("#open-rsvp");
+const mobileOpenButton = document.querySelector("#open-rsvp-mobile");
 const closeButton = document.querySelector("#close-rsvp");
 const doneButton = document.querySelector("#done-rsvp");
 const form = document.querySelector("#rsvp-form");
@@ -19,6 +20,7 @@ function setModal(open) {
 }
 
 openButton.addEventListener("click", () => setModal(true));
+mobileOpenButton.addEventListener("click", () => setModal(true));
 closeButton.addEventListener("click", () => setModal(false));
 doneButton.addEventListener("click", () => setModal(false));
 backdrop.addEventListener("mousedown", (event) => {

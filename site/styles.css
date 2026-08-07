@@ -53,6 +53,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 
 .rsvp-button, .submit-button { border: 0; border-radius: 999px; color: white; background: var(--ink); font-weight: 850; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease; }
 .rsvp-button { display: block; width: min(320px, 100%); margin: 44px auto 0; padding: 18px 28px; box-shadow: 0 10px 0 #e4b95f; animation: button-breathe 3.6s ease-in-out 1.1s infinite; }
+.mobile-rsvp-button { display: none; }
 .rsvp-button span { margin-left: 18px; }
 .rsvp-button:hover, .submit-button:hover { transform: translateY(-2px); }
 .rsvp-button:focus-visible, .submit-button:focus-visible, .close-button:focus-visible, .stepper button:focus-visible, input:focus-visible { outline: 3px solid #e7bd65; outline-offset: 3px; }
@@ -120,20 +121,53 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 
 @media (max-width: 600px) {
   main { padding: 0; align-items: stretch; }
-  .invitation { min-height: 100svh; border: 0; border-radius: 0; padding: 36px 24px 32px; }
-  .hero-copy { width: 72%; }
-  .flight-path-one { left: -34px; top: 18px; width: 178px; }
-  .flight-path-one img { width: 220px; }
-  .flight-path-two { top: 472px; right: -88px; left: auto; width: 195px; }
-  .flight-path-two img { width: 260px; }
-  .flight-path-three { left: -96px; top: auto; bottom: 38px; width: 230px; }
-  .flight-path-three img { width: 205px; }
-  .background-name { top: 312px; left: 12px; right: 12px; opacity: .34; }
-  .background-name span { font-size: clamp(4.1rem, 19vw, 6rem); }
-  .party-details { grid-template-columns: 105px 1fr; gap: 12px; margin-top: 108px; }
-  .day { font-size: 5.4rem; }
-  .detail-copy { padding: 20px 18px; }
-  .modal { padding: 38px 24px 28px; }
+  .invitation { min-height: 100svh; border: 0; border-radius: 0; padding: 24px 18px 96px; }
+  .hero-copy { width: 76%; }
+  .eyebrow { margin-bottom: 8px; font-size: .65rem; }
+  .hero-copy h1 { font-size: 2.55rem; line-height: .9; }
+  .intro { margin-top: 12px; font-size: .86rem; line-height: 1.35; }
+  .flight-path-one { left: -44px; top: 8px; width: 160px; }
+  .flight-path-one img { width: 198px; }
+  .flight-path-two { top: 365px; right: -100px; left: auto; width: 180px; }
+  .flight-path-two img { width: 235px; }
+  .flight-path-three { left: -108px; top: auto; bottom: 52px; width: 210px; }
+  .flight-path-three img { width: 185px; }
+  .background-name { top: 225px; left: 10px; right: 10px; opacity: .31; }
+  .background-name span { font-size: clamp(3.75rem, 18vw, 5.5rem); }
+  .party-details { grid-template-columns: 78px 1fr; gap: 10px; margin-top: 58px; align-items: start; }
+  .date-block { padding-top: 14px; }
+  .month { font-size: .66rem; }
+  .day { font-size: 4.2rem; }
+  .year { margin-top: 6px; font-size: .63rem; text-align: center; }
+  .detail-copy { padding: 14px 15px; border-radius: 18px; }
+  .time { margin-bottom: 6px; font-size: .95rem; }
+  .detail-copy h2 { margin-bottom: 5px; font-size: 1.38rem; }
+  .detail-copy p:not(.time) { font-size: .78rem; line-height: 1.38; }
+  .detail-copy .hosts { margin-top: 8px; padding-top: 8px; }
+  .directions { margin-top: 8px; font-size: .75rem; }
+  .invitation > .rsvp-button, .footer-note { display: none; }
+  .mobile-rsvp-button {
+    position: fixed;
+    z-index: 15;
+    left: 16px;
+    right: 16px;
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    min-height: 56px;
+    border: 0;
+    border-radius: 999px;
+    color: white;
+    background: var(--ink);
+    box-shadow: 0 8px 0 #e4b95f, 0 12px 30px rgba(24,53,95,.24);
+    font-weight: 850;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    animation: button-breathe 3.6s ease-in-out 1.1s infinite;
+  }
+  .modal { max-height: calc(100svh - 24px); overflow-y: auto; padding: 32px 20px 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
