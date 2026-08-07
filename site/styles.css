@@ -25,12 +25,12 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .background-name span:nth-child(4) { color: var(--mint); transform: rotate(8deg) translateY(8px); animation-delay: -2.7s; }
 .background-name span:nth-child(5) { color: var(--gold); transform: rotate(-8deg); animation-delay: -3.6s; }
 .flight-path { position: absolute; z-index: -1; height: 98px; border-top: 3px dashed rgba(24,53,95,.2); border-radius: 50%; pointer-events: none; }
-.flight-path span { position: absolute; right: -9px; top: -30px; display: block; color: var(--ink); font-family: Arial, sans-serif; font-size: 4rem; line-height: 1; transform: rotate(16deg); animation: plane-float 3.8s ease-in-out infinite; filter: drop-shadow(0 7px 5px rgba(24,53,95,.18)); }
+.flight-path img { position: absolute; right: -78px; top: -74px; display: block; width: 250px; height: auto; animation: plane-float 3.8s ease-in-out infinite; filter: drop-shadow(0 8px 6px rgba(24,53,95,.18)); }
 .flight-path-one { top: 24px; left: 14px; width: 255px; transform: rotate(-8deg); }
 .flight-path-two { top: 452px; right: -46px; width: 250px; transform: rotate(174deg); }
-.flight-path-two span { color: #0f5595; font-size: 4.8rem; animation-delay: -1.35s; }
+.flight-path-two img { width: 300px; transform: rotate(180deg); animation-delay: -1.35s; }
 .flight-path-three { bottom: 45px; left: -42px; width: 300px; height: 82px; transform: rotate(10deg); }
-.flight-path-three span { color: var(--coral); font-size: 3.7rem; animation-delay: -2.4s; }
+.flight-path-three img { width: 220px; animation-delay: -2.4s; }
 
 .hero-copy { width: min(340px, 74%); margin-left: auto; }
 .eyebrow { margin: 0 0 12px; font-size: .73rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; color: var(--coral); }
@@ -111,11 +111,11 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   .background-name { top: auto; bottom: 78px; left: 35px; right: 35px; opacity: .22; }
   .background-name span { font-size: clamp(6rem, 11vw, 9.6rem); }
   .flight-path-one { top: 28px; left: 30px; width: 300px; }
-  .flight-path-one span { font-size: 4.8rem; }
+  .flight-path-one img { width: 290px; }
   .flight-path-two { top: 330px; right: -55px; width: 315px; }
-  .flight-path-two span { font-size: 5.7rem; }
+  .flight-path-two img { width: 355px; }
   .flight-path-three { bottom: 24px; left: 32%; width: 350px; }
-  .flight-path-three span { font-size: 4.4rem; }
+  .flight-path-three img { width: 260px; }
 }
 
 @media (max-width: 600px) {
@@ -123,11 +123,11 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   .invitation { min-height: 100svh; border: 0; border-radius: 0; padding: 36px 24px 32px; }
   .hero-copy { width: 72%; }
   .flight-path-one { left: -34px; top: 18px; width: 178px; }
-  .flight-path-one span { font-size: 3.6rem; }
+  .flight-path-one img { width: 220px; }
   .flight-path-two { top: 472px; right: -88px; left: auto; width: 195px; }
-  .flight-path-two span { font-size: 4.25rem; }
+  .flight-path-two img { width: 260px; }
   .flight-path-three { left: -96px; top: auto; bottom: 38px; width: 230px; }
-  .flight-path-three span { font-size: 3.35rem; }
+  .flight-path-three img { width: 205px; }
   .background-name { top: 312px; left: 12px; right: 12px; opacity: .34; }
   .background-name span { font-size: clamp(4.1rem, 19vw, 6rem); }
   .party-details { grid-template-columns: 105px 1fr; gap: 12px; margin-top: 108px; }
