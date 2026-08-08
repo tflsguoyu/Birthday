@@ -27,7 +27,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .birthday-child.is-waving .child-body { opacity: 0; }
 .birthday-child.is-waving .child-wave-sequence { opacity: 1; animation: child-wave-frames 2.25s steps(1, end) infinite; }
 .birthday-child.is-waving::after { animation: child-sparkle .9s ease-in-out; }
-.child-speech { position: absolute; z-index: 5; top: 3%; left: 70%; width: 185px; padding: 11px 14px; border: 1px solid rgba(24,53,95,.12); border-radius: 18px 18px 18px 5px; color: var(--ink); background: rgba(255,253,248,.97); box-shadow: 0 8px 22px rgba(24,53,95,.16); font-family: Georgia, serif; font-size: .82rem; font-weight: 700; line-height: 1.25; text-align: center; opacity: 0; transform: translate(-8px, 8px) scale(.72); transform-origin: 0 100%; pointer-events: none; }
+.child-speech { position: absolute; z-index: 5; top: 3%; left: 80%; width: max-content; padding: 11px 14px; border: 1px solid rgba(24,53,95,.12); border-radius: 18px 18px 18px 5px; color: var(--ink); background: rgba(255,253,248,.97); box-shadow: 0 8px 22px rgba(24,53,95,.16); font-family: Georgia, serif; font-size: .82rem; font-weight: 700; line-height: 1.25; text-align: center; opacity: 0; transform: translate(-8px, 8px) scale(.72); transform-origin: 0 100%; pointer-events: none; }
 .child-speech > span { display: block; white-space: nowrap; }
 .child-speech::after { content: ""; position: absolute; left: -8px; bottom: 7px; width: 16px; height: 16px; border-left: 1px solid rgba(24,53,95,.12); border-bottom: 1px solid rgba(24,53,95,.12); background: rgba(255,253,248,.97); transform: rotate(45deg); }
 .birthday-child.is-waving .child-speech { animation: child-speech-pop 3.2s .9s cubic-bezier(.2,.8,.2,1) both; }
@@ -150,7 +150,8 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   39%, 45% { left: 21%; top: 52%; transform: translate(-50%, -50%) scaleX(1) rotate(-8deg); }
   53%, 59% { left: 11%; top: 56%; transform: translate(-50%, -50%) scaleX(-1) rotate(4deg); }
   69%, 76% { left: 14%; top: 16%; transform: translate(-50%, -50%) scaleX(1) rotate(-7deg); }
-  92%, 100% { left: 87%; top: 31%; transform: translate(-50%, -50%) scaleX(1) rotate(5deg); }
+  92% { left: 87%; top: 31%; transform: translate(-50%, -50%) scaleX(1) rotate(5deg); }
+  96%, 100% { left: 87%; top: 31%; transform: translate(-50%, -50%) scaleX(-1) rotate(-7deg); }
 }
 
 @media (min-width: 900px) {
@@ -187,7 +188,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   .hero-copy h1 { font-size: 2.55rem; line-height: .9; }
   .intro { max-width: calc(100% + 18px); margin-top: 12px; margin-left: -18px; font-size: clamp(.7rem, 3.5vw, .86rem); line-height: 1.35; }
   .birthday-child { z-index: 6; top: 15%; left: 50%; width: 136px; translate: -50% 0; }
-  .child-speech { left: 68%; width: 145px; padding: 8px 10px; border-radius: 14px 14px 14px 5px; font-size: .68rem; }
+  .child-speech { left: 80%; padding: 8px 10px; border-radius: 14px 14px 14px 5px; font-size: .68rem; }
   .flight-path-one { display: block; top: 28px; left: -24px; width: 122px; height: 78px; }
   .flight-path-one img { top: -30px; right: -22px; width: 132px; }
   .travel-map { position: relative; z-index: 0; order: 3; top: auto; left: auto; width: 96%; margin: -8px auto 2px; transform: none; flex: 0 0 auto; }
