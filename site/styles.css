@@ -40,7 +40,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .pin-seattle { left: 14%; top: 16%; animation-delay: 8.97s; }
 .pin-los-angeles { left: 11%; top: 56%; animation-delay: 6.89s; }
 .pin-las-vegas { left: 21%; top: 52%; animation-delay: 5.07s; }
-.pin-new-york { left: 87%; top: 31%; animation-delay: 0s; }
+.pin-new-york { left: 87%; top: 31%; width: 14px; height: 14px; border: 3px solid white; animation-delay: 0s; background: var(--blue); box-shadow: 0 0 0 3px var(--gold), 0 3px 10px rgba(24,53,95,.3); }
 .pin-honolulu { left: 18%; top: 83%; animation-delay: 2.73s; }
 .pin-honolulu > span { bottom: auto; top: 12px; }
 .extra-pin { z-index: 1; width: 8px; height: 8px; transform: translate(-50%, -50%); border: 1.5px solid white; border-radius: 50%; opacity: .9; background: var(--blue); box-shadow: 0 2px 6px rgba(24,53,95,.25); animation: none; }
