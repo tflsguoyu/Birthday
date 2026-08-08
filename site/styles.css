@@ -43,7 +43,9 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .pin-new-york { left: 87%; top: 31%; animation-delay: 0s; }
 .pin-honolulu { left: 18%; top: 83%; animation-delay: 2.73s; }
 .pin-honolulu > span { bottom: auto; top: 12px; }
-.extra-pin { width: 8px; height: 8px; border-width: 1.5px; opacity: .68; background: var(--blue); animation: none; }
+.extra-pin { width: 8px; height: 8px; transform: translate(-50%, -50%); border: 1.5px solid white; border-radius: 50%; opacity: .9; background: var(--blue); box-shadow: 0 2px 6px rgba(24,53,95,.25); animation: none; }
+.extra-pin::before { content: ""; position: absolute; left: 50%; bottom: 3px; width: 2px; height: 14px; border-radius: 2px; background: var(--blue); box-shadow: 0 1px 3px rgba(24,53,95,.25); }
+.extra-pin::after { content: ""; position: absolute; inset: auto; left: calc(50% + 2px); bottom: 10px; width: 9px; height: 7px; border: 0; border-radius: 1px; opacity: 1; background: var(--coral); clip-path: polygon(0 0, 100% 0, 75% 50%, 100% 100%, 0 100%); }
 .pin-big-island { left: 25%; top: 89%; }
 .pin-san-diego { left: 13%; top: 64%; }
 .pin-nashville { left: 60%; top: 58%; }
