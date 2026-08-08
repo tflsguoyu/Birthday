@@ -23,7 +23,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .birthday-child::after { content: "✦"; position: absolute; z-index: 2; top: 20%; right: 7%; color: var(--gold); font-size: 1rem; text-shadow: 0 2px 5px rgba(24,53,95,.16); opacity: 0; }
 .birthday-child img { display: block; width: 100%; height: auto; }
 .child-body { filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); }
-.child-wave-sequence { position: absolute; inset: 0; display: block; background: transparent url("augie-wave-spritesheet.webp") 0 0 / 300% 200% no-repeat; filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); opacity: 0; pointer-events: none; }
+.child-wave-sequence { position: absolute; inset: 0; display: block; background: transparent url("augie-wave-full-fixed-spritesheet.webp") 0 0 / 300% 200% no-repeat; filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); opacity: 0; pointer-events: none; }
 .birthday-child.is-waving .child-body { opacity: 0; }
 .birthday-child.is-waving .child-wave-sequence { opacity: 1; animation: child-wave-frames 1.35s steps(1, end) forwards; }
 .birthday-child.is-waving::after { animation: child-sparkle .9s ease-in-out; }
