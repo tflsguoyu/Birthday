@@ -25,7 +25,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .child-body { filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); }
 .child-wave-sequence { position: absolute; inset: 0; display: block; background: transparent url("augie-wave-original-aligned-spritesheet.webp") 0 0 / 300% 200% no-repeat; filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); opacity: 0; pointer-events: none; }
 .birthday-child.is-waving .child-body { opacity: 0; }
-.birthday-child.is-waving .child-wave-sequence { opacity: 1; animation: child-wave-frames 1.35s steps(1, end) infinite; }
+.birthday-child.is-waving .child-wave-sequence { opacity: 1; animation: child-wave-frames 2.25s steps(1, end) infinite; }
 .birthday-child.is-waving::after { animation: child-sparkle .9s ease-in-out; }
 .child-speech { position: absolute; z-index: 5; top: 3%; left: 72%; width: 210px; padding: 11px 14px; border: 1px solid rgba(24,53,95,.12); border-radius: 18px 18px 18px 5px; color: var(--ink); background: rgba(255,253,248,.97); box-shadow: 0 8px 22px rgba(24,53,95,.16); font-family: Georgia, serif; font-size: .82rem; font-weight: 700; line-height: 1.25; text-align: center; opacity: 0; transform: translate(-8px, 8px) scale(.72); transform-origin: 0 100%; pointer-events: none; }
 .child-speech::after { content: ""; position: absolute; left: -8px; bottom: 7px; width: 16px; height: 16px; border-left: 1px solid rgba(24,53,95,.12); border-bottom: 1px solid rgba(24,53,95,.12); background: rgba(255,253,248,.97); transform: rotate(45deg); }
@@ -119,12 +119,16 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 @keyframes card-arrive { from { opacity: 0; transform: translateY(18px) scale(.985); } }
 @keyframes child-arrive { from { opacity: 0; transform: translateY(14px) scale(.94); } }
 @keyframes child-wave-frames {
-  0%, 16% { background-position: 0 0; }
-  17%, 32% { background-position: 50% 0; }
-  33%, 48% { background-position: 100% 0; }
-  49%, 64% { background-position: 0 100%; }
-  65%, 80% { background-position: 50% 100%; }
-  81%, 100% { background-position: 100% 100%; }
+  0%, 9% { background-position: 0 0; }
+  10%, 19% { background-position: 50% 0; }
+  20%, 29% { background-position: 100% 0; }
+  30%, 39% { background-position: 0 100%; }
+  40%, 49% { background-position: 50% 100%; }
+  50%, 59% { background-position: 100% 100%; }
+  60%, 69% { background-position: 50% 100%; }
+  70%, 79% { background-position: 0 100%; }
+  80%, 89% { background-position: 100% 0; }
+  90%, 100% { background-position: 50% 0; }
 }
 @keyframes child-sparkle { 0%, 100% { opacity: 0; transform: translateY(4px) scale(.35) rotate(0); } 38% { opacity: 1; transform: translateY(-2px) scale(1.15) rotate(35deg); } 72% { opacity: .75; transform: translateY(-7px) scale(.85) rotate(85deg); } }
 @keyframes child-speech-pop { 0% { opacity: 0; transform: translate(-8px, 8px) scale(.72); } 14%, 76% { opacity: 1; transform: translate(0, 0) scale(1); } 88% { opacity: 1; transform: translate(0, -2px) scale(1); } 100% { opacity: 0; transform: translate(3px, -5px) scale(.94); } }
