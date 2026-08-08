@@ -182,7 +182,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   .traveler-plane { width: 64px; }
   .background-name { position: relative; z-index: 1; order: 2; top: auto; left: auto; right: auto; width: 100%; min-height: 60px; margin: 0 0 8px; opacity: .58; }
   .background-name span { font-size: clamp(3.35rem, 16vw, 4.8rem); }
-  .party-details { order: 4; grid-template-columns: 90px minmax(0, 1fr); gap: 12px; margin-top: 4px; align-items: start; }
+  .party-details { order: 4; grid-template-columns: 90px minmax(0, 1fr); gap: 12px; margin-top: 12px; align-items: start; }
   .date-block { padding-top: 14px; }
   .month { padding: 5px 8px; font-size: .76rem; letter-spacing: .08em; }
   .day { font-size: 4.2rem; }
@@ -243,7 +243,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   .background-name span { font-size: clamp(2.9rem, 14.5vw, 4.2rem); }
   .travel-map { width: 90%; margin: -6px auto 0; }
   .birthday-child { width: 120px; }
-  .party-details { grid-template-columns: 86px minmax(0, 1fr); gap: 10px; margin-top: 0; }
+  .party-details { grid-template-columns: 86px minmax(0, 1fr); gap: 10px; margin-top: 6px; }
   .date-block { padding-top: 10px; }
   .day { font-size: 3.8rem; }
   .detail-copy { padding: 10px 12px; }

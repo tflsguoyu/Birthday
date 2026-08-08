@@ -22,6 +22,12 @@
     <meta name="twitter:description" content="Sunday, August 30 · 4:30–6:00 PM · The Little Gym" />
     <meta name="twitter:image" content="https://tflsguoyu.github.io/Birthday/og.png?v=__BUILD_VERSION__" />
     <script>
+      const cleanUrl = new URL(window.location.href);
+      if (cleanUrl.searchParams.has("v")) {
+        cleanUrl.searchParams.delete("v");
+        window.history.replaceState(null, "", `${cleanUrl.pathname}${cleanUrl.search}${cleanUrl.hash}`);
+      }
+
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
           navigator.serviceWorker.register("sw.js?v=__BUILD_VERSION__", {
@@ -29,17 +35,6 @@
           });
         });
       }
-
-      fetch(`version.json?check=${Date.now()}`, { cache: "no-store" })
-        .then((response) => response.json())
-        .then(({ version }) => {
-          const url = new URL(window.location.href);
-          if (version && url.searchParams.get("v") !== version) {
-            url.searchParams.set("v", version);
-            window.location.replace(url);
-          }
-        })
-        .catch(() => {});
     </script>
     <link rel="stylesheet" href="styles.css?v=__BUILD_VERSION__" />
     <script src="script.js?v=__BUILD_VERSION__" defer></script>
