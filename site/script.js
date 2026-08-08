@@ -13,14 +13,17 @@ const errorMessage = document.querySelector("#form-error");
 const submitButton = document.querySelector("#submit-rsvp");
 const nameInput = document.querySelector("#guest-name");
 const airplanes = document.querySelectorAll(".flight-path img");
+const birthdayChild = document.querySelector(".birthday-child");
 
 function launchAirplane(airplane) {
-  if (airplane.classList.contains("is-launching")) return;
+  const motionClass = `is-${airplane.dataset.flight}`;
+  const motionClasses = ["is-taking-off", "is-looping", "is-bouncing"];
+  if (motionClasses.some((className) => airplane.classList.contains(className))) return;
 
-  airplane.classList.add("is-launching");
-  const finishLaunch = () => airplane.classList.remove("is-launching");
+  airplane.classList.add(motionClass);
+  const finishLaunch = () => airplane.classList.remove(motionClass);
   airplane.addEventListener("animationend", finishLaunch, { once: true });
-  window.setTimeout(finishLaunch, 950);
+  window.setTimeout(finishLaunch, 1200);
 
   const rect = airplane.getBoundingClientRect();
   const colors = ["#ec775f", "#79b6c7", "#acbd70", "#e7bd65", "#8fc9bd"];
@@ -48,6 +51,22 @@ airplanes.forEach((airplane) => {
       launchAirplane(airplane);
     }
   });
+});
+
+function waveBirthdayChild() {
+  if (birthdayChild.classList.contains("is-waving")) return;
+  birthdayChild.classList.add("is-waving");
+  const finishWave = () => birthdayChild.classList.remove("is-waving");
+  birthdayChild.querySelector("img").addEventListener("animationend", finishWave, { once: true });
+  window.setTimeout(finishWave, 1100);
+}
+
+birthdayChild.addEventListener("click", waveBirthdayChild);
+birthdayChild.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    waveBirthdayChild();
+  }
 });
 
 function setModal(open) {

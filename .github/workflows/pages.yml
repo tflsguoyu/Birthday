@@ -29,7 +29,9 @@ jobs:
         run: |
           mkdir deploy
           cp -R site/. deploy/
-          find deploy -type f \( -name '*.html' -o -name '*.json' \) -exec sed -i "s/__BUILD_VERSION__/${GITHUB_SHA}/g" {} +
+          BUILD_VERSION="$(date -u +'%Y.%m.%d').${GITHUB_RUN_NUMBER}"
+          find deploy -type f \( -name '*.html' -o -name '*.json' \) -exec sed -i "s/__BUILD_VERSION__/${BUILD_VERSION}/g" {} +
+          printf '{"version":"%s"}\n' "$BUILD_VERSION" > deploy/version.json
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:

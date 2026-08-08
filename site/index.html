@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#fffaf1" />
+    <meta name="theme-color" content="#fef3e3" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
@@ -41,9 +41,23 @@
     <main>
       <section class="invitation" aria-labelledby="party-title">
         <div class="paper-noise" aria-hidden="true"></div>
-        <div class="flight-path flight-path-one"><img src="cartoon-plane.png?v=__BUILD_VERSION__" alt="" role="button" tabindex="0" aria-label="Make the airplane fly" title="Tap to make me fly!" /></div>
-        <div class="flight-path flight-path-two"><img src="cartoon-plane.png?v=__BUILD_VERSION__" alt="" role="button" tabindex="0" aria-label="Make the airplane fly" title="Tap to make me fly!" /></div>
-        <div class="flight-path flight-path-three"><img src="cartoon-plane.png?v=__BUILD_VERSION__" alt="" role="button" tabindex="0" aria-label="Make the airplane fly" title="Tap to make me fly!" /></div>
+        <div class="travel-map" role="group" aria-label="Augie’s 2026 journey from New York to Hawaii, Las Vegas, LA, Seattle, and back to New York">
+          <img class="travel-map-art" src="us-travel-map.png?v=__BUILD_VERSION__" alt="" />
+          <span class="map-pin pin-seattle"><span>Seattle</span></span>
+          <span class="map-pin pin-los-angeles"><span>LA</span></span>
+          <span class="map-pin pin-las-vegas"><span>Las Vegas</span></span>
+          <span class="map-pin pin-new-york"><span>New York</span></span>
+          <span class="map-pin pin-hawaii"><span>Hawaii</span></span>
+          <span class="traveler-plane" aria-hidden="true">
+            <img class="tour-plane" src="cartoon-plane.png?v=__BUILD_VERSION__" alt="" />
+            <span class="pilot-window"><img src="birthday-cartoon-boy.png?v=__BUILD_VERSION__" alt="" /></span>
+          </span>
+          <div class="birthday-child" role="button" tabindex="0" aria-label="Make Augie wave" title="Tap Augie to wave!">
+            <img src="birthday-cartoon-boy-transparent.png?v=__BUILD_VERSION__" alt="" />
+          </div>
+        </div>
+        <div class="flight-path flight-path-one"><img src="cartoon-plane.png?v=__BUILD_VERSION__" alt="" role="button" tabindex="0" data-flight="looping" aria-label="Make the airplane roll" title="Tap for a barrel roll!" /></div>
+        <div class="flight-path flight-path-two"><img src="cartoon-plane.png?v=__BUILD_VERSION__" alt="" role="button" tabindex="0" data-flight="looping" aria-label="Make the airplane loop" title="Tap for a loop!" /></div>
         <div class="background-name" aria-hidden="true">
           <span>a</span><span>u</span><span>g</span><span>i</span><span>e</span>
         </div>
