@@ -63,7 +63,8 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .hero-copy h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(2.9rem, 9vw, 5.2rem); font-weight: 800; line-height: .88; letter-spacing: -.055em; color: #0f5595; }
 .hero-copy h1, .intro, .eyebrow { text-shadow: 0 1px 0 rgba(254,243,227,.9), 0 0 10px rgba(254,243,227,.8); }
 .hero-copy h1 span { color: var(--coral); }
-.intro { max-width: 280px; margin: 20px 0 0; font-size: 1rem; line-height: 1.55; }
+.intro { max-width: 280px; margin: 20px 0 0; font-size: 1rem; line-height: 1.55; text-align: center; }
+.intro-line { display: block; white-space: nowrap; }
 
 .party-details { display: grid; grid-template-columns: 145px 1fr; gap: 42px; align-items: center; margin-top: clamp(84px, 16vw, 140px); }
 .date-block { display: grid; justify-items: center; transform: rotate(-2deg); }
@@ -171,7 +172,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   .hero-copy { order: 1; width: 68%; min-height: 150px; padding-top: 0; transform: translateY(-10px); }
   .eyebrow { margin-bottom: 8px; font-size: .65rem; }
   .hero-copy h1 { font-size: 2.55rem; line-height: .9; }
-  .intro { max-width: calc(100% + 18px); margin-top: 12px; margin-left: -18px; font-size: .86rem; line-height: 1.35; }
+  .intro { max-width: calc(100% + 18px); margin-top: 12px; margin-left: -18px; font-size: clamp(.7rem, 3.5vw, .86rem); line-height: 1.35; }
   .birthday-child { z-index: 6; top: 15%; left: 50%; width: 136px; translate: -50% 0; }
   .flight-path-one { display: block; top: 28px; left: -24px; width: 122px; height: 78px; }
   .flight-path-one img { top: -30px; right: -22px; width: 132px; }
@@ -237,7 +238,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   .invitation { padding-top: 16px; }
   .hero-copy { min-height: 136px; transform: translateY(-8px); }
   .hero-copy h1 { font-size: 2.4rem; }
-  .intro { margin-top: 9px; font-size: .82rem; line-height: 1.28; }
+  .intro { margin-top: 9px; font-size: clamp(.7rem, 3.35vw, .82rem); line-height: 1.28; }
   .background-name { min-height: 52px; margin-bottom: 4px; }
   .background-name span { font-size: clamp(2.9rem, 14.5vw, 4.2rem); }
   .travel-map { width: 90%; margin: -6px auto 0; }
