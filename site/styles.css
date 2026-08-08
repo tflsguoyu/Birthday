@@ -22,11 +22,9 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .birthday-child { position: absolute; z-index: -1; top: 4px; left: 8px; width: 145px; border-radius: 30%; cursor: pointer; pointer-events: auto; touch-action: manipulation; animation: child-arrive .9s .18s cubic-bezier(.2,.8,.2,1) both; }
 .birthday-child::after { content: "✦"; position: absolute; z-index: 2; top: 20%; right: 7%; color: var(--gold); font-size: 1rem; text-shadow: 0 2px 5px rgba(24,53,95,.16); opacity: 0; }
 .birthday-child img { display: block; width: 100%; height: auto; }
-.child-body, .child-body-no-hand { filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); }
-.child-body-no-hand { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
-.child-wave-sequence { position: absolute; inset: 0; display: block; background: transparent url("augie-wave-hand-spritesheet.png") 0 0 / 300% 200% no-repeat; opacity: 0; pointer-events: none; }
+.child-body { filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); }
+.child-wave-sequence { position: absolute; inset: 0; display: block; background: transparent url("augie-wave-spritesheet.webp") 0 0 / 300% 200% no-repeat; filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); opacity: 0; pointer-events: none; }
 .birthday-child.is-waving .child-body { opacity: 0; }
-.birthday-child.is-waving .child-body-no-hand { opacity: 1; }
 .birthday-child.is-waving .child-wave-sequence { opacity: 1; animation: child-wave-frames 1.35s steps(1, end) forwards; }
 .birthday-child.is-waving::after { animation: child-sparkle .9s ease-in-out; }
 .child-speech { position: absolute; z-index: 5; top: 3%; left: 72%; width: 210px; padding: 11px 14px; border: 1px solid rgba(24,53,95,.12); border-radius: 18px 18px 18px 5px; color: var(--ink); background: rgba(255,253,248,.97); box-shadow: 0 8px 22px rgba(24,53,95,.16); font-family: Georgia, serif; font-size: .82rem; font-weight: 700; line-height: 1.25; text-align: center; opacity: 0; transform: translate(-8px, 8px) scale(.72); transform-origin: 0 100%; pointer-events: none; }
