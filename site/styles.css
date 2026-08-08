@@ -257,7 +257,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   .background-name span { font-size: clamp(2.9rem, 14.5vw, 4.2rem); }
   .travel-map { width: 90%; margin: -6px auto 0; }
   .birthday-child { width: 120px; }
-  .child-speech { width: 146px; font-size: .64rem; }
+  .child-speech { font-size: .64rem; }
   .party-details { grid-template-columns: 86px minmax(0, 1fr); gap: 10px; margin-top: 6px; }
   .date-block { padding-top: 10px; }
   .day { font-size: 3.8rem; }
