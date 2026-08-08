@@ -60,7 +60,7 @@ function waveBirthdayChild() {
   birthdayChild.classList.add("is-waving");
   const finishWave = () => birthdayChild.classList.remove("is-waving");
   childSpeech.addEventListener("animationend", finishWave, { once: true });
-  window.setTimeout(finishWave, 3100);
+  window.setTimeout(finishWave, 5800);
 }
 
 birthdayChild.addEventListener("click", waveBirthdayChild);

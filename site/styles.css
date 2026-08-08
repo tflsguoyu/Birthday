@@ -22,13 +22,14 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .birthday-child { position: absolute; z-index: -1; top: 4px; left: 8px; width: 145px; border-radius: 30%; cursor: pointer; pointer-events: auto; touch-action: manipulation; animation: child-arrive .9s .18s cubic-bezier(.2,.8,.2,1) both; }
 .birthday-child::after { content: "✦"; position: absolute; z-index: 2; top: 20%; right: 7%; color: var(--gold); font-size: 1rem; text-shadow: 0 2px 5px rgba(24,53,95,.16); opacity: 0; }
 .birthday-child img { display: block; width: 100%; height: auto; }
-.child-body { clip-path: polygon(0 0, 63% 0, 63% 24%, 60% 29%, 58% 34%, 58% 39%, 62% 44%, 100% 44%, 100% 100%, 0 100%); filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); }
-.child-wave-hand { position: absolute; inset: 0; clip-path: polygon(58% 25%, 69% 20%, 82% 21%, 86% 31%, 83% 43%, 71% 48%, 60% 43%, 56% 35%); transform-origin: 60% 40%; pointer-events: none; }
-.birthday-child.is-waving .child-wave-hand { animation: child-hand-wave 1.05s ease-in-out; }
+.child-body { filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); }
+.child-wave-sequence { position: absolute; inset: 0; display: block; background: url("augie-wave-spritesheet.png") 0 0 / 300% 200% no-repeat; filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); opacity: 0; pointer-events: none; }
+.birthday-child.is-waving .child-body { opacity: 0; }
+.birthday-child.is-waving .child-wave-sequence { opacity: 1; animation: child-wave-frames 1.35s steps(1, end) forwards; }
 .birthday-child.is-waving::after { animation: child-sparkle .9s ease-in-out; }
 .child-speech { position: absolute; z-index: 5; top: 3%; left: 72%; width: 210px; padding: 11px 14px; border: 1px solid rgba(24,53,95,.12); border-radius: 18px 18px 18px 5px; color: var(--ink); background: rgba(255,253,248,.97); box-shadow: 0 8px 22px rgba(24,53,95,.16); font-family: Georgia, serif; font-size: .82rem; font-weight: 700; line-height: 1.25; text-align: center; opacity: 0; transform: translate(-8px, 8px) scale(.72); transform-origin: 0 100%; pointer-events: none; }
 .child-speech::after { content: ""; position: absolute; left: -8px; bottom: 7px; width: 16px; height: 16px; border-left: 1px solid rgba(24,53,95,.12); border-bottom: 1px solid rgba(24,53,95,.12); background: rgba(255,253,248,.97); transform: rotate(45deg); }
-.birthday-child.is-waving .child-speech { animation: child-speech-pop 2.15s .65s cubic-bezier(.2,.8,.2,1) both; }
+.birthday-child.is-waving .child-speech { animation: child-speech-pop 4.5s .9s cubic-bezier(.2,.8,.2,1) both; }
 .birthday-child:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .travel-map { position: absolute; z-index: -2; top: 28px; left: 50%; width: min(66%, 480px); aspect-ratio: 3 / 2; transform: translateX(-50%) rotate(-1deg); pointer-events: none; }
 .travel-map-art { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; opacity: .2; filter: saturate(.82); -webkit-mask-image: radial-gradient(ellipse 78% 73% at 50% 48%, #000 64%, transparent 98%); mask-image: radial-gradient(ellipse 78% 73% at 50% 48%, #000 64%, transparent 98%); }
@@ -121,7 +122,14 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 @keyframes rise-in { from { opacity: 0; transform: translateY(16px) scale(.98); } }
 @keyframes card-arrive { from { opacity: 0; transform: translateY(18px) scale(.985); } }
 @keyframes child-arrive { from { opacity: 0; transform: translateY(14px) scale(.94); } }
-@keyframes child-hand-wave { 0%, 100% { transform: rotate(0); } 18% { transform: rotate(-9deg); } 36% { transform: rotate(8deg); } 54% { transform: rotate(-8deg); } 72% { transform: rotate(7deg); } 88% { transform: rotate(-3deg); } }
+@keyframes child-wave-frames {
+  0%, 16% { background-position: 0 0; }
+  17%, 32% { background-position: 50% 0; }
+  33%, 48% { background-position: 100% 0; }
+  49%, 64% { background-position: 0 100%; }
+  65%, 80% { background-position: 50% 100%; }
+  81%, 100% { background-position: 100% 100%; }
+}
 @keyframes child-sparkle { 0%, 100% { opacity: 0; transform: translateY(4px) scale(.35) rotate(0); } 38% { opacity: 1; transform: translateY(-2px) scale(1.15) rotate(35deg); } 72% { opacity: .75; transform: translateY(-7px) scale(.85) rotate(85deg); } }
 @keyframes child-speech-pop { 0% { opacity: 0; transform: translate(-8px, 8px) scale(.72); } 14%, 76% { opacity: 1; transform: translate(0, 0) scale(1); } 88% { opacity: 1; transform: translate(0, -2px) scale(1); } 100% { opacity: 0; transform: translate(3px, -5px) scale(.94); } }
 @keyframes plane-float { 0%, 100% { translate: 0 0; rotate: 0deg; } 50% { translate: 8px -7px; rotate: -3deg; } }
