@@ -1,5 +1,6 @@
 const recipient = "tflsguoyu@gmail.com";
 const endpoint = `https://formsubmit.co/ajax/${recipient}`;
+const isWeChatBrowser = /MicroMessenger/i.test(navigator.userAgent);
 
 const backdrop = document.querySelector("#modal-backdrop");
 const openButton = document.querySelector("#open-rsvp");
@@ -98,10 +99,10 @@ document.querySelectorAll("[data-counter]").forEach((button) => {
 });
 
 form.addEventListener("submit", async (event) => {
-  event.preventDefault();
   const adults = Number(document.querySelector("#adults").value);
   const children = Number(document.querySelector("#children").value);
   if (adults + children < 1) {
+    event.preventDefault();
     errorMessage.textContent = "Please include at least one guest.";
     return;
   }
@@ -109,6 +110,10 @@ form.addEventListener("submit", async (event) => {
   errorMessage.textContent = "";
   submitButton.disabled = true;
   submitButton.textContent = "Sending…";
+
+  if (isWeChatBrowser) return;
+
+  event.preventDefault();
 
   try {
     const response = await fetch(endpoint, {
@@ -130,3 +135,13 @@ form.addEventListener("submit", async (event) => {
     submitButton.textContent = "Send RSVP";
   }
 });
+
+const returnUrl = new URL(window.location.href);
+if (returnUrl.searchParams.get("rsvp") === "sent") {
+  formState.hidden = true;
+  successState.hidden = false;
+  document.querySelector("#confirmation-copy").textContent = "Thanks! Your RSVP has been sent to Augie’s family.";
+  setModal(true);
+  returnUrl.searchParams.delete("rsvp");
+  window.history.replaceState(null, "", `${returnUrl.pathname}${returnUrl.search}${returnUrl.hash}`);
+}
