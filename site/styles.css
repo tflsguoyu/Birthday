@@ -44,17 +44,12 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .pin-honolulu { left: 18%; top: 83%; animation-delay: 2.73s; }
 .pin-honolulu > span { bottom: auto; top: 12px; }
 .extra-pin { width: 8px; height: 8px; border-width: 1.5px; opacity: .68; background: var(--blue); animation: none; }
-.extra-pin > span { padding: 2px 5px; font-size: .48rem; opacity: .78; scale: 1; animation: none; }
 .pin-big-island { left: 25%; top: 89%; }
-.pin-big-island > span { bottom: 17px; }
 .pin-san-diego { left: 13%; top: 64%; }
 .pin-nashville { left: 60%; top: 58%; }
 .pin-philadelphia { left: 84%; top: 37%; }
-.pin-philadelphia > span { bottom: auto; top: 11px; translate: -72% 0; }
 .pin-dc { left: 81%; top: 44%; }
-.pin-dc > span { bottom: auto; top: 11px; translate: -20% 0; }
 .pin-boston { left: 92%; top: 23%; }
-.pin-boston > span { translate: -82% 0; }
 .pin-orlando { left: 78%; top: 78%; }
 .traveler-plane { position: absolute; z-index: 3; left: 87%; top: 31%; width: clamp(58px, 13%, 96px); aspect-ratio: 1.25; transform: translate(-50%, -50%); opacity: .94; filter: drop-shadow(0 5px 6px rgba(24,53,95,.22)); animation: travel-tour 13s ease-in-out infinite; }
 .tour-plane { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
