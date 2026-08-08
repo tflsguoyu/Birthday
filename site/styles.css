@@ -13,6 +13,8 @@ html { background: #f2e8d7; }
 body { margin: 0; color: var(--ink); font-family: "Avenir Next", Avenir, "Trebuchet MS", sans-serif; background: radial-gradient(circle at 12% 16%, rgba(236,119,95,.15) 0 2px, transparent 3px), radial-gradient(circle at 88% 76%, rgba(121,182,199,.18) 0 3px, transparent 4px), #f2e8d7; }
 button, input { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
+.birthday-child, .flight-path img { -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; user-select: none; }
+.birthday-child img, .flight-path img { -webkit-user-drag: none; }
 main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18px; }
 
 .invitation { position: relative; isolation: isolate; width: min(100%, 720px); min-height: min(920px, calc(100svh - 56px)); overflow: hidden; padding: clamp(38px, 7vw, 78px) clamp(28px, 8vw, 82px) 42px; border: 1px solid rgba(68,57,40,.12); border-radius: 32px; background: var(--paper); box-shadow: 0 28px 80px rgba(82,55,24,.18); animation: card-arrive .75s cubic-bezier(.2,.8,.2,1) both; }
