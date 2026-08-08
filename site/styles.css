@@ -40,7 +40,8 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .pin-seattle { left: 14%; top: 16%; animation-delay: 8.97s; }
 .pin-los-angeles { left: 11%; top: 56%; animation-delay: 6.89s; }
 .pin-las-vegas { left: 21%; top: 52%; animation-delay: 5.07s; }
-.pin-new-york { left: 87%; top: 31%; width: 16px; height: 16px; border: 2px solid var(--blue); animation-name: origin-visit; animation-delay: 0s; background: rgba(255,250,241,.94); box-shadow: 0 0 0 2px white, 0 0 0 4px var(--gold), 0 3px 9px rgba(24,53,95,.26); }
+.pin-new-york { left: 87%; top: 31%; animation-delay: 0s; }
+.pin-new-york::before { content: ""; position: absolute; inset: -4px; border: 2px solid var(--blue); border-radius: 50%; box-shadow: 0 0 0 2px white, 0 0 0 4px var(--gold); }
 .pin-honolulu { left: 18%; top: 83%; animation-delay: 2.73s; }
 .pin-honolulu > span { bottom: auto; top: 12px; }
 .extra-pin { z-index: 1; width: 8px; height: 8px; transform: translate(-50%, -50%); border: 1.5px solid white; border-radius: 50%; opacity: .9; background: var(--blue); box-shadow: 0 2px 6px rgba(24,53,95,.25); animation: none; }
@@ -153,11 +154,6 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   0%, 100% { scale: 1; background: var(--coral); box-shadow: 0 2px 8px rgba(24,53,95,.25), 0 0 0 0 rgba(231,189,101,0); }
   4%, 8% { scale: 1.6; background: var(--gold); box-shadow: 0 2px 8px rgba(24,53,95,.25), 0 0 0 8px rgba(231,189,101,.22); }
   12% { scale: 1; background: var(--coral); box-shadow: 0 2px 8px rgba(24,53,95,.25), 0 0 0 0 rgba(231,189,101,0); }
-}
-@keyframes origin-visit {
-  0%, 100% { scale: 1; background: rgba(255,250,241,.94); box-shadow: 0 0 0 2px white, 0 0 0 4px var(--gold), 0 3px 9px rgba(24,53,95,.26); }
-  4%, 8% { scale: 1.16; background: var(--gold); box-shadow: 0 0 0 2px white, 0 0 0 5px var(--blue), 0 0 0 8px rgba(231,189,101,.22); }
-  12% { scale: 1; background: rgba(255,250,241,.94); box-shadow: 0 0 0 2px white, 0 0 0 4px var(--gold), 0 3px 9px rgba(24,53,95,.26); }
 }
 @keyframes place-label { 0%, 100% { opacity: 0; scale: .86; } 3%, 9% { opacity: 1; scale: 1; } 12% { opacity: 0; scale: .94; } }
 @keyframes travel-tour {
