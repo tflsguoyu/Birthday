@@ -18,12 +18,10 @@ const birthdayChild = document.querySelector(".birthday-child");
 const childSpeech = birthdayChild.querySelector(".child-speech");
 
 function launchAirplane(airplane) {
-  const motionClass = `is-${airplane.dataset.flight}`;
-  const motionClasses = ["is-taking-off", "is-looping", "is-bouncing"];
-  if (motionClasses.some((className) => airplane.classList.contains(className))) return;
+  if (airplane.classList.contains("is-looping")) return;
 
-  airplane.classList.add(motionClass);
-  const finishLaunch = () => airplane.classList.remove(motionClass);
+  airplane.classList.add("is-looping");
+  const finishLaunch = () => airplane.classList.remove("is-looping");
   airplane.addEventListener("animationend", finishLaunch, { once: true });
   window.setTimeout(finishLaunch, 1200);
 
