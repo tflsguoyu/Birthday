@@ -24,7 +24,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 .birthday-child img { display: block; width: 100%; height: auto; }
 .child-body, .child-body-no-hand { filter: drop-shadow(0 12px 14px rgba(82,55,24,.12)); }
 .child-body-no-hand { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
-.child-wave-sequence { position: absolute; inset: 0; display: block; background: url("augie-wave-hand-spritesheet.webp") 0 0 / 300% 200% no-repeat; opacity: 0; pointer-events: none; }
+.child-wave-sequence { position: absolute; inset: 0; display: block; background: transparent url("augie-wave-hand-spritesheet.png") 0 0 / 300% 200% no-repeat; opacity: 0; pointer-events: none; }
 .birthday-child.is-waving .child-body { opacity: 0; }
 .birthday-child.is-waving .child-body-no-hand { opacity: 1; }
 .birthday-child.is-waving .child-wave-sequence { opacity: 1; animation: child-wave-frames 1.35s steps(1, end) forwards; }
