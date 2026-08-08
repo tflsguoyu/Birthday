@@ -15,6 +15,7 @@ const submitButton = document.querySelector("#submit-rsvp");
 const nameInput = document.querySelector("#guest-name");
 const airplanes = document.querySelectorAll(".flight-path img");
 const birthdayChild = document.querySelector(".birthday-child");
+const childSpeech = birthdayChild.querySelector(".child-speech");
 
 function launchAirplane(airplane) {
   const motionClass = `is-${airplane.dataset.flight}`;
@@ -58,8 +59,8 @@ function waveBirthdayChild() {
   if (birthdayChild.classList.contains("is-waving")) return;
   birthdayChild.classList.add("is-waving");
   const finishWave = () => birthdayChild.classList.remove("is-waving");
-  birthdayChild.querySelector("img").addEventListener("animationend", finishWave, { once: true });
-  window.setTimeout(finishWave, 1100);
+  childSpeech.addEventListener("animationend", finishWave, { once: true });
+  window.setTimeout(finishWave, 3100);
 }
 
 birthdayChild.addEventListener("click", waveBirthdayChild);
