@@ -121,8 +121,8 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 
 @media (max-width: 600px) {
   main { padding: 0; align-items: stretch; }
-  .invitation { min-height: 100svh; border: 0; border-radius: 0; padding: 24px 18px 96px; }
-  .hero-copy { width: 76%; }
+  .invitation { min-height: 100svh; display: flex; flex-direction: column; border: 0; border-radius: 0; padding: 24px 18px 96px; }
+  .hero-copy { order: 1; width: 76%; }
   .eyebrow { margin-bottom: 8px; font-size: .65rem; }
   .hero-copy h1 { font-size: 2.55rem; line-height: .9; }
   .intro { margin-top: 12px; font-size: .86rem; line-height: 1.35; }
@@ -132,9 +132,9 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   .flight-path-two img { width: 235px; }
   .flight-path-three { left: -108px; top: auto; bottom: 52px; width: 210px; }
   .flight-path-three img { width: 185px; }
-  .background-name { top: 225px; left: 10px; right: 10px; opacity: .31; }
-  .background-name span { font-size: clamp(3.75rem, 18vw, 5.5rem); }
-  .party-details { grid-template-columns: 78px 1fr; gap: 10px; margin-top: 58px; align-items: start; }
+  .background-name { position: relative; z-index: 1; order: 2; top: auto; left: auto; right: auto; width: 100%; min-height: 66px; margin: 14px 0 2px; opacity: .58; }
+  .background-name span { font-size: clamp(3.35rem, 16vw, 4.8rem); }
+  .party-details { order: 3; grid-template-columns: 78px 1fr; gap: 10px; margin-top: 4px; align-items: start; }
   .date-block { padding-top: 14px; }
   .month { font-size: .66rem; }
   .day { font-size: 4.2rem; }
