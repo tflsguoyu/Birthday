@@ -96,8 +96,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
 
 .guest-list { width: min(610px, 100%); margin: 30px auto 0; padding: 24px 28px 27px; border: 1px dashed rgba(24,53,95,.2); border-radius: 22px; background: rgba(255,250,241,.74); box-shadow: 0 8px 24px rgba(33,52,62,.06); }
 .guest-list-kicker { margin: 0 0 5px; color: var(--coral); font-size: .68rem; font-weight: 850; letter-spacing: .14em; text-align: center; text-transform: uppercase; }
-.guest-list h2 { margin: 0 0 5px; font-family: Georgia, serif; font-size: 1.65rem; line-height: 1; text-align: center; }
-.guest-list-count-key { margin: 0 0 15px; color: rgba(24,53,95,.58); font-size: .65rem; font-weight: 750; letter-spacing: .05em; text-align: center; text-transform: uppercase; }
+.guest-list h2 { margin: 0 0 17px; font-family: Georgia, serif; font-size: 1.65rem; line-height: 1; text-align: center; }
 .guest-list ul { display: grid; grid-template-columns: 1fr; gap: 8px; width: min(100%, 390px); margin: 0 auto; padding: 0; list-style: none; }
 .guest-list li { display: flex; align-items: baseline; justify-content: center; gap: 6px; font-size: .82rem; line-height: 1.35; text-align: center; }
 .guest-list li::before { content: "✦"; flex: 0 0 auto; color: var(--gold); font-size: .72rem; }
@@ -255,8 +254,7 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 28px 18p
   .directions { margin-top: 8px; font-size: .75rem; }
   .guest-list { order: 5; margin-top: 22px; padding: 19px 16px 21px; border-radius: 18px; }
   .guest-list-kicker { font-size: .6rem; }
-  .guest-list h2 { margin-bottom: 4px; font-size: 1.38rem; }
-  .guest-list-count-key { margin-bottom: 12px; font-size: .56rem; }
+  .guest-list h2 { margin-bottom: 14px; font-size: 1.38rem; }
   .guest-list ul { gap: 8px; }
   .guest-list li { font-size: .72rem; }
   .invitation > .rsvp-button { display: none; }
